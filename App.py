@@ -7,7 +7,8 @@ def main():
                  unsafe_allow_html=True)
 
      #st.image('Image.jpg')
-     img=Image.open(r'C:\Users\Param Singh\Desktop\Image.jpg')
+     img=Image.open(https://emerj.com/wp-content/uploads/2018/10/predictive-analytics'
+              '-in-healthcare-current-applications-and-trends-3.jpg')
      st.image(img)
 
      model = joblib.load('model_random_forest_regression')
