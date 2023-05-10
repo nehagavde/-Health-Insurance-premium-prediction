@@ -5,7 +5,7 @@ def main():
      st.markdown("<h1 style='text-align: center; color:white;'>Health Insurance Cost Prediction</h1>",
                  unsafe_allow_html=True)
 
-     st.image('Image.jpg')
+     #st.image('Image.jpg')
 
      model = joblib.load('model_random_forest_regression')
                          #model_random_forest_regression')
