@@ -6,6 +6,8 @@ def main():
                  unsafe_allow_html=True)
 
      #st.image('Image.jpg')
+     img=Image.open('Image.jpg')
+     st.image(img)
 
      model = joblib.load('model_random_forest_regression')
                          #model_random_forest_regression')
