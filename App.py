@@ -1,4 +1,5 @@
 import streamlit as st
+from PIL import Image
 import joblib
 
 def main():
@@ -6,7 +7,7 @@ def main():
                  unsafe_allow_html=True)
 
      #st.image('Image.jpg')
-     img=Image.open('Image.jpg')
+     img=Image.open(r'C:\Users\Param Singh\Desktop\Image.jpg')
      st.image(img)
 
      model = joblib.load('model_random_forest_regression')
