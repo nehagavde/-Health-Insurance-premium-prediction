@@ -1,5 +1,5 @@
 import streamlit as st
-from PIL import Image
+#from PIL import Image
 import joblib
 
 def main():
@@ -7,9 +7,8 @@ def main():
                  unsafe_allow_html=True)
 
      #st.image('Image.jpg')
-     img=Image.open('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics'
-              '-in-healthcare-current-applications-and-trends-3.jpg')
-     st.image(img)
+     #img=Image.open('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
+     st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
 
      model = joblib.load('model_random_forest_regression')
                          #model_random_forest_regression')
