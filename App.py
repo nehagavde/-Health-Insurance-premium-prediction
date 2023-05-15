@@ -10,7 +10,7 @@ def main():
      #img=Image.open('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
      st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
 
-     model = joblib.load('model_gradient_boosting_regressor')
+     model = joblib.load('model_gradient_boosting_regressor (1)')
                          #model_random_forest_regression')
      
      age = st.slider('Enter Your Age',18,100)
