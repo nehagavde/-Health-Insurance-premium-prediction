@@ -18,9 +18,7 @@ def main():
         "</div>",
         unsafe_allow_html=True
     )
-    # Add a gap between the image and the age input field
-    st.empty()
-    
+  
     model = joblib.load('model_gradient_boosting_regressor (1)')
     # model = joblib.load('model_random_forest_regression')
 
