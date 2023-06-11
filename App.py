@@ -1,52 +1,71 @@
 import streamlit as st
-#from PIL import Image
 import joblib
+from PIL import Image
 
 def main():
-     st.markdown("<h1 style='text-align: center; color:white;'>Health Insurance Cost Prediction</h1>",
-                 unsafe_allow_html=True)
+    st.set_page_config(page_title="Welcome To Insurance Premium Predictor", layout="wide")
 
-     #st.image('Image.jpg')
-     #img=Image.open('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
-     st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
+    
+    #st.markdown("<h1 style='text-align: center; color:white;'>Welcome To Insurance Premium Predictor</h1>", unsafe_allow_html=True)
+    st.title("Welcome To Insurance Premium Predictor")
 
-     model = joblib.load('model_gradient_boosting_regressor')
-                         #model_random_forest_regression')
-     
-     age = st.slider('Enter Your Age',18,100)
+    img = Image.open('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
+    #st.image(img)
+    st.image(img, use_column_width=False, caption='', width=1300)
 
-     sex = st.selectbox('Enter Your Gender',('Male','Female'))
-     if(sex=='Male'):
-          sex=1
-     else:
-          sex=0
 
-     bmi = st.number_input("Enter Your BMI Value")
+    # Define the desired height
+    desired_height = 200
 
-     children = st.selectbox('Enter The Number of Children',(0,1,2,3,4))
+    # Calculate the proportional width based on the desired height
+    proportional_width = int((desired_height / float(img.size[1])) * img.size[0])
 
-     smoker = st.selectbox('Are You Smoker',('Yes','No'))
-     if(smoker=='Yes'):
-          smoker=1
-     else:
-          smoker=0
+    # Resize the image
+    resized_image = img.resize((proportional_width, desired_height))
 
-     region = st.selectbox('Enter Your Region',('Southwest','Southeast','Northwest','Northeast'))
-     if(region=='Southwest'):
-          region=1
-     elif(region=='Southeast'):
-          region=2
-     elif(region=='Northwest'):
-          region=3
-     else:
-          region=4
+    # Display the resized image
+    #st.image(resized_image, caption='Resized Image', use_column_width=True)
 
-     if st.button('Predict'):
-          pred = model.predict([[age, sex, bmi, children, smoker, region]])
+    model = joblib.load('model_gradient_boosting_regressor (1)')
+    # model = joblib.load('model_random_forest_regression')
 
-          st.balloons()
-          st.success('Your Insurance Cost is {}'.format(round(pred[0],2)))
+    age = st.slider('Enter Age&nbsp; Of&nbsp; The&nbsp; Customer', 18, 100)
+
+    sex = st.selectbox('Select&nbsp; Gender&nbsp; Of&nbsp; The&nbsp; Customer', ('Male', 'Female'))
+    if sex == 'Male':
+        sex = 1
+    else:
+        sex = 0
+
+    bmi = st.number_input("Enter&nbsp;BMI&nbsp; Value&nbsp; Of&nbsp; The&nbsp; Customer")
+
+    children = st.selectbox('Enter&nbsp; Number&nbsp; Of&nbsp; The&nbsp; Children', (0, 1, 2, 3, 4))
+
+    # Add multiple <br> tags for a larger gap
+    st.markdown("<br> ", unsafe_allow_html=True)
+
+    smoker = st.selectbox('Select&nbsp; Type&nbsp; Of&nbsp; The&nbsp; Customer&nbsp; (Smoker)', ('Yes', 'No'))
+    if smoker == 'Yes':
+        smoker = 1
+    else:
+        smoker = 0
+
+    region = st.selectbox('Select&nbsp; Region&nbsp; Of&nbsp; The&nbsp; Customer', ('Southwest', 'Southeast', 'Northwest', 'Northeast'))
+    if region == 'Southwest':
+        region = 1
+    elif region == 'Southeast':
+        region = 2
+    elif region == 'Northwest':
+        region = 3
+    else:
+        region = 4
+
+    if st.button('Predict'):
+        pred = model.predict([[age, sex, bmi, children, smoker, region]])
+
+        st.balloons()
+        st.success('Your Insurance Cost is {}'.format(round(pred[0], 2)))
 
 
 if __name__ == '__main__':
-     main()
+    main()
