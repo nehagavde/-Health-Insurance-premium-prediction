@@ -6,36 +6,14 @@ def main():
     st.set_page_config(page_title="Welcome To Insurance Premium Predictor", layout="wide")
 
     
-    #st.markdown("<h1 style='text-align: center; color:white;'>Welcome To Insurance Premium Predictor</h1>", unsafe_allow_html=True)
-    st.title("Welcome To Insurance Premium Predictor")
+    st.markdown("<h1 style='text-align: center; color:white;'>Welcome To Insurance Premium Predictor</h1>", unsafe_allow_html=True)
+    #st.title("Welcome To Insurance Premium Predictor")
 
     #img = Image.open('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
     #st.image(img)
     #st.image(img, use_column_width=False, caption='', width=1300)
-    #st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
-    url = 'https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg'
-    response = requests.get(url)
-    response.raise_for_status()
-    # Save the downloaded image locally
-    filename = 'image.jpg'
-    with open(filename, 'wb') as file:
-        file.write(response.content)
-
-    # Open the saved image
-    img = Image.open(filename)
-
-
-    # Define the desired height
-    desired_height = 200
-
-    # Calculate the proportional width based on the desired height
-    proportional_width = int((desired_height / float(img.size[1])) * img.size[0])
-
-    # Resize the image
-    resized_image = img.resize((proportional_width, desired_height))
-
-    # Display the resized image
-    st.image(resized_image, caption='Resized Image', use_column_width=True)
+    st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg',width=400,height=300)
+    
 
     model = joblib.load('model_gradient_boosting_regressor (1)')
     # model = joblib.load('model_random_forest_regression')
