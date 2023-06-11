@@ -8,16 +8,17 @@ def main():
     
     st.markdown("<h1 style='text-align: center; color:white;'>Welcome To Insurance Premium Predictor</h1>", unsafe_allow_html=True)
     #st.title("Welcome To Insurance Premium Predictor")
-
-    #img = Image.open('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
-    #st.image(img)
-    #st.image(img, use_column_width=False, caption='', width=1300)
-    #st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg',
-             #width=400,height=300)
-    st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
-             
+    #st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
     
-
+    # Center-align the image by wrapping it in a div tag with CSS styling
+    st.markdown(
+        "<div style='display: flex; justify-content: center;'>"
+        "<img src='https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg' "
+        "style='width: 400px; height: 300px;'>"
+        "</div>",
+        unsafe_allow_html=True
+    )
+    
     model = joblib.load('model_gradient_boosting_regressor (1)')
     # model = joblib.load('model_random_forest_regression')
 
