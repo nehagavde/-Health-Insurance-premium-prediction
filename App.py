@@ -1,6 +1,6 @@
 import streamlit as st
 import joblib
-from PIL import Image
+#from PIL import Image
 
 def main():
     st.set_page_config(page_title="Welcome To Insurance Premium Predictor", layout="wide")
@@ -9,16 +9,17 @@ def main():
     #st.markdown("<h1 style='text-align: center; color:white;'>Welcome To Insurance Premium Predictor</h1>", unsafe_allow_html=True)
     st.title("Welcome To Insurance Premium Predictor")
 
-    img = Image.open('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
+    #img = Image.open('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
     #st.image(img)
-    st.image(img, use_column_width=False, caption='', width=1300)
+    #st.image(img, use_column_width=False, caption='', width=1300)
+    st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
 
 
     # Define the desired height
-    desired_height = 200
+    #desired_height = 200
 
     # Calculate the proportional width based on the desired height
-    proportional_width = int((desired_height / float(img.size[1])) * img.size[0])
+    #proportional_width = int((desired_height / float(img.size[1])) * img.size[0])
 
     # Resize the image
     resized_image = img.resize((proportional_width, desired_height))
