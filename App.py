@@ -1,6 +1,6 @@
 import streamlit as st
 import joblib
-from PIL import Image
+#from PIL import Image
 
 def main():
     st.set_page_config(page_title="Welcome To Insurance Premium Predictor", layout="wide")
@@ -12,7 +12,7 @@ def main():
     #img = Image.open('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
     #st.image(img)
     #st.image(img, use_column_width=False, caption='', width=1300)
-    st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg',width=400,height=300)
+    st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg' ,width=400,height=300)
     
 
     model = joblib.load('model_gradient_boosting_regressor (1)')
