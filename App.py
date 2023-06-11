@@ -14,7 +14,7 @@ def main():
     st.markdown(
         "<div style='display: flex; justify-content: center;'>"
         "<img src='https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg' "
-        "style='width: 1300px; height: 300px;'>"
+        "style='width: 1400px; height: 400px;'>"
         "</div>",
         unsafe_allow_html=True
     )
