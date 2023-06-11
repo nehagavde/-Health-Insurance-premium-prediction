@@ -14,8 +14,8 @@ def main():
     #st.image(img, use_column_width=False, caption='', width=1300)
     #st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg',
              #width=400,height=300)
-    st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg',
-             width=400, height=300)
+    st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
+             
     
 
     model = joblib.load('model_gradient_boosting_regressor (1)')
