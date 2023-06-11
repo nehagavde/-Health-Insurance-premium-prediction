@@ -22,7 +22,7 @@ def main():
     #proportional_width = int((desired_height / float(img.size[1])) * img.size[0])
 
     # Resize the image
-    resized_image = img.resize((proportional_width, desired_height))
+    #resized_image = img.resize((proportional_width, desired_height))
 
     # Display the resized image
     #st.image(resized_image, caption='Resized Image', use_column_width=True)
