@@ -13,7 +13,7 @@ def main():
     st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
 
     download_model_from_github()
-    model = joblib.load('model_gradient_boosting_regressor (1).joblib')
+    model = joblib.load('model_gradient_boosting_regressor (1)')
 
     age = st.slider('Enter Your Age', 18, 100)
 
