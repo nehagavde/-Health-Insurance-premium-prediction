@@ -1,6 +1,7 @@
 streamlit
+pickle5
 Pillow
 seaborn
 matplotlib
 scikit-learn
-pickle
+
