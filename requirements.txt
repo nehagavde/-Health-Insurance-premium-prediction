@@ -4,4 +4,6 @@ Pillow
 seaborn
 matplotlib
 scikit-learn
+pickleshare==0.7.5
+joblib
 
