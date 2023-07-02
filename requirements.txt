@@ -2,6 +2,5 @@ streamlit
 Pillow
 seaborn
 matplotlib
-joblib
 scikit-learn
 pickle
