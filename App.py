@@ -1,12 +1,13 @@
 import streamlit as st
-import joblib
+import pickle
 
 def main():
     st.markdown("<h1 style='text-align: center; color:white;'>Health Insurance Cost Prediction</h1>", unsafe_allow_html=True)
 
     st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
 
-    model = joblib.load('model_gradient_boosting_regressor')
+    with open('model_gradient_boosting_regressor.pkl', 'rb') as file:
+        model = pickle.load(file)
 
     age = st.slider('Enter Your Age', 18, 100)
 
@@ -35,7 +36,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
- 
- 
