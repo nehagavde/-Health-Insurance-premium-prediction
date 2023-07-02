@@ -6,8 +6,8 @@ def main():
 
     st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
 
-    with open('gradient_boosting_regressor_model (1).pkl', 'rb') as file:
-        model = pickle.dump(file)
+    with open('gradient_boosting_regressor_model (1).pkl', 'rb') as f:
+        model = pickle.load(f)
 
     age = st.slider('Enter Your Age', 18, 100)
 
