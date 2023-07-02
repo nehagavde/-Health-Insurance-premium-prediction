@@ -9,6 +9,7 @@ def main():
 
     with open('gradient_boosting_regressor_model (1).pkl', 'rb') as f:
         model = pickle.load(f)
+    print(model)
 
     age = st.slider('Enter Your Age', 18, 100)
 
