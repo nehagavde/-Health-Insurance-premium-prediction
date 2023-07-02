@@ -1,64 +1,48 @@
 import streamlit as st
 import joblib
-#from PIL import Image
 
 def main():
-    st.set_page_config(page_title="Welcome To Insurance Premium Predictor", layout="wide")
+     st.markdown("<h1 style='text-align: center; color:white;'>Health Insurance Cost Prediction</h1>",
+                 unsafe_allow_html=True)
 
-    
-    st.markdown("<h1 style='text-align: center; color:white;'>Welcome To Insurance Premium Predictor</h1>", unsafe_allow_html=True)
-    #st.title("Welcome To Insurance Premium Predictor")
-    #st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
-    
-    # Center-align the image by wrapping it in a div tag with CSS styling
-    st.markdown(
-        "<div style='display: flex; justify-content: center;'>"
-        "<img src='https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg' "
-        "style='width: 1400px; height: 400px;'>"
-        "</div>",
-        unsafe_allow_html=True
-    )
-  
-    model = joblib.load('model_gradient_boosting_regressor (1)')
-    # model = joblib.load('model_random_forest_regression')
+     st.image('https://emerj.com/wp-content/uploads/2018/10/predictive-analytics-in-healthcare-current-applications-and-trends-3.jpg')
 
-    age = st.slider('Enter Age&nbsp; Of&nbsp; The&nbsp; Customer', 18, 100)
+     model = joblib.load('model_gradient_boosting_regressor (1)')
 
-    sex = st.selectbox('Select&nbsp; Gender&nbsp; Of&nbsp; The&nbsp; Customer', ('Male', 'Female'))
-    if sex == 'Male':
-        sex = 1
-    else:
-        sex = 0
+     age = st.slider('Enter Your Age',18,100)
 
-    bmi = st.number_input("Enter&nbsp;BMI&nbsp; Value&nbsp; Of&nbsp; The&nbsp; Customer")
+     sex = st.selectbox('Sex',('Male','Female'))
+     if(sex=='Male'):
+          sex=1
+     else:
+          sex=0
 
-    children = st.selectbox('Enter&nbsp; Number&nbsp; Of&nbsp; The&nbsp; Children', (0, 1, 2, 3, 4))
+     bmi = st.number_input("Enter Your BMI Value")
 
-    # Add multiple <br> tags for a larger gap
-    st.markdown("<br> ", unsafe_allow_html=True)
+     children = st.selectbox('Enter Number of Children',(0,1,2,3,4))
 
-    smoker = st.selectbox('Select&nbsp; Type&nbsp; Of&nbsp; The&nbsp; Customer&nbsp; (Smoker)', ('Yes', 'No'))
-    if smoker == 'Yes':
-        smoker = 1
-    else:
-        smoker = 0
+     smoker = st.selectbox('Smoker',('Yes','No'))
+     if(smoker=='Yes'):
+          smoker=1
+     else:
+          smoker=0
 
-    region = st.selectbox('Select&nbsp; Region&nbsp; Of&nbsp; The&nbsp; Customer', ('Southwest', 'Southeast', 'Northwest', 'Northeast'))
-    if region == 'Southwest':
-        region = 1
-    elif region == 'Southeast':
-        region = 2
-    elif region == 'Northwest':
-        region = 3
-    else:
-        region = 4
+     region = st.selectbox('Enter Your Region',('Southwest','Southeast','Northwest','Northeast'))
+     if(region=='Southwest'):
+          region=1
+     elif(region=='Southeast'):
+          region=2
+     elif(region=='Northwest'):
+          region=3
+     else:
+          region=4
 
-    if st.button('Predict'):
-        pred = model.predict([[age, sex, bmi, children, smoker, region]])
+     if st.button('Predict'):
+          pred = model.predict([[age, sex, bmi, children, smoker, region]])
 
-        st.balloons()
-        st.success('Your Insurance Cost is {}'.format(round(pred[0], 2)))
+          st.balloons()
+          st.success('Your Insurance Cost is {}'.format(round(pred[0],2)))
 
 
 if __name__ == '__main__':
-    main()
+     main()
