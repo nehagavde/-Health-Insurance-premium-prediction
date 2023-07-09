@@ -14,8 +14,8 @@ The following approach explains the project lifecycle :
 
 4. Model Building : For model building we split the data into train and test. Then we train our model on different machine learning algorithms like :
 
-i. Linear Regression ii. Support Vector Regressor iii. Random Forest Regressor iv. Gradient Boosting Regressor v. Decision Tree vi. Xgboost 
-vii. KNN
+    i. Linear Regression ii. Support Vector Regressor iii. Random Forest Regressor iv. Gradient Boosting Regressor v. Decision Tree vi. Xgboost 
+    vii. KNN
 
 5. Model Testing : We use test data to get the predicted values and the model with best r2_score and lowest MAE is selected. The best model is saved for predictions.
 
